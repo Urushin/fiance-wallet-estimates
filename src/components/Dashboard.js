@@ -213,7 +213,6 @@ export default function Dashboard() {
 
 
   // Quick date nav
-  const endContrat = alternance?.endDate || "2026-08-31";
 
   function handleSetup(e) {
     e.preventDefault();
@@ -489,7 +488,7 @@ export default function Dashboard() {
             { label: "+1m", date: addMonths(today(), 1) },
             { label: "+3m", date: addMonths(today(), 3) },
             { label: "+6m", date: addMonths(today(), 6) },
-            { label: "Fin contrat", date: endContrat },
+            { label: "+1an", date: addMonths(today(), 12) },
           ].map(b => (
             <button key={b.label} onClick={() => setSimDate(b.date)}
               className={`text-[10px] px-2 py-0.5 rounded-full border cursor-pointer transition-colors ${
@@ -791,7 +790,6 @@ function ScenarioBlock() {
   const [baseCapital, setBaseCapital] = useState(null);
   const [simDate, setSimDate] = useState(today());
 
-  const endContrat = store.alternance?.endDate || "2026-08-31";
   const base = baseCapital ?? 0;
 
   const capExp = useMemo(() => computeCapitalFromToday(base, store, simDate, "expected"),  [base, store, simDate]);
@@ -799,7 +797,7 @@ function ScenarioBlock() {
   const capMax = useMemo(() => computeCapitalFromToday(base, store, simDate, "max"),       [base, store, simDate]);
   const showRange = capMin !== capExp || capMax !== capExp;
 
-  const goal = store.settings?.goalTotal || 20000;
+  const goal = store.settings?.goalTotal || 0;
   const pct  = Math.min(100, goal > 0 ? (capExp / goal) * 100 : 0);
 
   const chartData = useMemo(
@@ -896,7 +894,7 @@ function ScenarioBlock() {
                     { label: "+1m", date: addMonths(today(), 1) },
                     { label: "+3m", date: addMonths(today(), 3) },
                     { label: "+6m", date: addMonths(today(), 6) },
-                    { label: "Fin", date: endContrat },
+                    { label: "+1an", date: addMonths(today(), 12) },
                   ].map(b => (
                     <button key={b.label} onClick={() => setSimDate(b.date)}
                       className={`text-[9px] px-1.5 py-0.5 rounded-full border cursor-pointer transition-colors ${

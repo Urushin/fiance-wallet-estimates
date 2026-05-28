@@ -293,7 +293,7 @@ function Recurring({ store }) {
   const [incName, setIncName] = useState("");
   const [incAmount, setIncAmount] = useState("");
   const [incStartDate, setIncStartDate] = useState(today());
-  const [incEndDate, setIncEndDate] = useState("2026-12-31");
+  const [incEndDate, setIncEndDate] = useState("");
   const [incIsRange, setIncIsRange] = useState(false);
   const [incAmountMin, setIncAmountMin] = useState("");
   const [incAmountMax, setIncAmountMax] = useState("");
@@ -419,7 +419,7 @@ function Recurring({ store }) {
       repeatEndDate: incEndDate || null,
     }]);
 
-    setIncName(""); setIncAmount(""); setIncAmountMin(""); setIncAmountMax(""); setIncNote(""); setIncFrequency("monthly"); setIncStartDate(today()); setIncEndDate("2026-12-31"); setIncIsRange(false); setAddingIncome(false);
+    setIncName(""); setIncAmount(""); setIncAmountMin(""); setIncAmountMax(""); setIncNote(""); setIncFrequency("monthly"); setIncStartDate(today()); setIncEndDate(""); setIncIsRange(false); setAddingIncome(false);
   }
 
   function toggleExpense(id) {

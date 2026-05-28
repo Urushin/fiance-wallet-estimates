@@ -8,17 +8,10 @@ const INITIAL = {
   capitalInitial: 0,
   transactions: [],
   treasury: [],
-  pockets: [
-    { id: "japon", name: "Voyage Japon en Famille", target: 4700, saved: 0 },
-    { id: "asie", name: "Installation Asie", target: 7000, saved: 0 },
-    { id: "securite", name: "Matelas de Sécurité", target: 8300, saved: 0 },
-  ],
-  alternance: { salary: 0, startDate: "", endDate: "2026-08-31", paymentDay: 5 },
+  pockets: [],
+  alternance: { salary: 0, startDate: "", endDate: "", paymentDay: 5 },
   freelance: [],
-  crypto: [
-    { id: "btc", symbol: "BTC", name: "Bitcoin", quantity: 0.25, buyPrice: 62000, active: true },
-    { id: "eth", symbol: "ETH", name: "Ethereum", quantity: 1.5, buyPrice: 3100, active: true }
-  ],
+  crypto: [],
   stocks: [],
   gold: [],
   realEstate: [],
@@ -28,13 +21,9 @@ const INITIAL = {
   recurringIncomes: [],
   financialGoals: [],
   customCountries: [],
-  budgets: [
-    { category: "Courses", limit: 300 },
-    { category: "Restaurant", limit: 150 },
-    { category: "Loisirs", limit: 100 },
-  ],
+  budgets: [],
   snapshots: [],
-  scenarios: [], // What-If events
+  scenarios: [],
   itCosts: [],
   familyTransfers: [],
   fitness: { gymCost: 0, proteinCost: 0, logs: [] },
@@ -56,8 +45,7 @@ const INITIAL = {
     discordWebhook: "",
     telegramToken: "",
     telegramChatId: "",
-    goalTotal: 20000,
-    asiaCostMonthly: 800,
+    goalTotal: 0,
     simInflation: 2.0, // %
     simYield: 5.0, // %
   },

@@ -41,8 +41,7 @@ export default function SettingsPage() {
 function General() {
   const store = useStore();
   const { settings, capitalInitial } = store;
-  const [goalVal, setGoalVal] = useState(settings.goalTotal?.toString() || "20000");
-  const [asiaVal, setAsiaVal] = useState(settings.asiaCostMonthly?.toString() || "800");
+  const [goalVal, setGoalVal] = useState(settings.goalTotal?.toString() || "");
   const [capitalVal, setCapitalVal] = useState(capitalInitial?.toString() || "0");
   const [saved, setSaved] = useState(false);
   const [layoutReset, setLayoutReset] = useState(false);
@@ -55,8 +54,7 @@ function General() {
   }
 
   function save() {
-    store.setNested("settings", "goalTotal", parseFloat(goalVal) || 20000);
-    store.setNested("settings", "asiaCostMonthly", parseFloat(asiaVal) || 800);
+    store.setNested("settings", "goalTotal", parseFloat(goalVal) || 0);
     store.set("capitalInitial", parseFloat(capitalVal) || 0);
     setSaved(true);
     setTimeout(() => setSaved(false), 1500);
