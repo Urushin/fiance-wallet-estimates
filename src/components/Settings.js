@@ -77,11 +77,7 @@ function General() {
           <label className="text-xs text-text-muted block mb-1">Objectif total (€)</label>
           <input type="number" value={goalVal} onChange={(e) => setGoalVal(e.target.value)} className="input mono" />
         </div>
-        <div>
-          <label className="text-xs text-text-muted block mb-1">Coût de vie Asie (€/mois)</label>
-          <input type="number" value={asiaVal} onChange={(e) => setAsiaVal(e.target.value)} className="input mono" />
-          <p className="text-[10px] text-text-muted mt-0.5">Utilisé pour le calcul du Runway.</p>
-        </div>
+
 
         <button onClick={save} className="btn btn-green w-full cursor-pointer">
           {saved ? <><Check className="w-4 h-4" /> Sauvegardé</> : "Sauvegarder"}
